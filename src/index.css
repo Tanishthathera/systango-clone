@@ -1,0 +1,955 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5% 5%;
+  background-color: #333;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 60px;
+}
+
+/* Navbar - Logo */
+.logo img {
+  height: auto;
+  max-height: 50px; /* Ensures the logo fits within the header */
+  cursor: pointer;
+}
+
+/* Navbar - Links */
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 5%;
+}
+
+.navbar ul li {
+  margin: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+/* Adding Hover Effects to Specific Navbar Items */
+.navbar a[href*="services"]:hover,
+.navbar a[href*="industries"]:hover,
+.navbar a[href*="portfolio"]:hover,
+.navbar a[href*="blog"]:hover {
+  padding-inline: 0.1rem;
+  border-bottom: 0.1rem solid rgb(70, 182, 247); /* Thicker blue border on hover */
+  transition: all 0.3s ease-in;
+}
+
+/* Contact Button */
+.contact-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+}
+
+/* Flexbox and auto-layout ensures responsiveness */
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+@supports (display: grid) {
+  .navbar ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Mobile-first approach, leveraging Flex and Grid ensures responsiveness */
+.navbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+/* Grid-based sections */
+.services,
+.industries,
+.portfolio,
+.testimonials,
+.blog,
+.contact-us {
+  padding: 5% 2%;
+}
+
+.services-grid,
+.industries-grid,
+.portfolio-grid,
+.testimonials-grid,
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2%;
+}
+
+.service-item,
+.industry-item,
+.portfolio-item,
+.testimonial-item,
+.blog-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5%;
+  text-align: center;
+}
+
+.service-item img,
+.industry-item img,
+.portfolio-item img,
+.testimonial-item img,
+.blog-item img {
+  width: 100%;
+  height: auto;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hide links on small screens */
+.hide-links {
+  display: none;
+}
+
+
+
+
+/* contact-us form */
+
+.contact-us {
+  padding: 50px;
+  background-color: #7aece7;
+  text-align: center;
+}
+
+.contact-us h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-us h5 {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.contact-us form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #5da4a7fa;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="phonenumber"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="phonenumber"]:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .contact-us {
+    padding: 20px;
+  }
+
+  .contact-us form {
+    padding: 20px;
+  }
+
+  .contact-us h1 {
+    font-size: 2em;
+  }
+
+  .contact-us h5 {
+    font-size: 1em;
+  }
+}
+
+
+
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 2%;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-links {
+  margin-bottom: 2.5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5%;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.social-media {
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  gap: 50%;
+}
+
+.social-media a {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.social-media a:hover {
+  color: #3c98fa;
+}
+
+.footer p {
+  margin-top: 2%;
+  font-size: 0.875rem;
+}
+
+
+
+/* Hero Section */
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  padding: 5% 0;
+  color: #333;
+  width: 100%;
+}
+
+.hero-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5%;
+}
+
+/* Mobile-specific styles for screens below 768px */
+@media (max-width: 768px) {
+  .hero-row {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .hero-image-wrapper {
+    order: -1; /* Move the hero image above the heading */
+  }
+
+  .hero-content {
+    order: 1; /* Keep content after the image */
+  }
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+  padding-right: 2%;
+  min-width: 300px;
+}
+
+.hero-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+  color: #fcf81be7;
+}
+
+.hero-description, .hero-subtext {
+  font-size: 1.1rem;
+  color: #dddada;
+  margin-bottom: 1.5%;
+}
+
+.hero-button-wrapper {
+  display: flex;
+  gap: 2%;
+  margin-bottom: 2%;
+}
+
+.action-button {
+  text-decoration: none;
+}
+
+.btn-outline-info {
+  border: 1.5px solid #17a2b8;
+  color: #17a2b8;
+  padding: 0% 40%;
+  transition: all 0.3s ease;
+  border-radius: 9px;
+  margin: 20%;
+}
+
+.btn-outline-info:hover {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.hero-image-wrapper {
+  flex: 1 ;
+  overflow: hidden;
+}
+
+.hero-image {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* Sidebar Styles */
+
+.sidebar {
+  width: 250px; /* Width of the sidebar */
+    background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(2, 2, 2, 0.1); 
+  color: rgb(105, 101, 101); /* Text color */
+  padding: 1.9rem; /* Padding inside the sidebar */
+  height: 100%; /* Full height of the viewport */
+  position: fixed; /* Fixed position */
+  top: 0; /* Position it at the top */
+  right: -250px; /* Initially hidden */
+  transition: right 0.3s ease; /* Smooth transition */
+}
+
+.sidebar.open {
+  right: 0; /* Show the sidebar when open */
+}
+
+.sidebar .logo {
+  text-align: center; /* Center the logo */
+  margin-bottom: 2rem; /* Space below the logo */
+}
+
+.sidebar .logo img {
+  max-height: 100px; /* Max height for logo */
+}
+
+.sidebar nav ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+.sidebar nav ul li {
+  margin: 1rem 0; /* Space between links */
+}
+
+.sidebar nav ul li a {
+  color: rgb(156, 155, 155); /* Link color */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 1rem; /* Font size */
+}
+
+.sidebar nav ul li a:hover {
+  color: #22c0ff; /* Hover color */
+}
+
+/* Toggle sidebar Button Style */
+
+.sidebar-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+
+
+
+
+/* services */
+
+/* Services Grid */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Adds modern spacing between items */
+  padding: 20px;
+  background: linear-gradient(45deg, #00f7ffef, hsla(180, 100%, 31%, 0.507), hsla(0, 0%, 6%, 0.493));
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite; /* Background animation */
+  border-radius: 12px; /* Modern rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Modern shadow effect */
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Service Item */
+.service-item {
+  flex-basis: calc(33.333% - 15px); /* Ensures 3 items per row, accounting for gaps */
+  min-width: 250px;
+  background-color: #25252573;
+  border-radius: 16px;
+  box-sizing: border-box;
+  text-align: end;
+  padding: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for service items */
+.service-item:hover {
+  transform: translateY(-10px); /* Modern elevation effect */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+
+}
+
+/* Service Title Styling */
+.service-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #fff7f7;
+  margin: 0px 0px 50px 5px;
+  line-height: 1.5;
+  text-align: start;
+  padding: 0px 0px 40px 40px;
+}
+
+/* Service Image Styling */
+.service-img img {
+  width: 80%; /* Slightly smaller for modern look */
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 0px; /* Spacing between image and title */
+}
+
+/* Optional: Hide breaks */
+.service-item p br {
+  display: none;
+}
+
+
+
+
+
+/* Industries Section */
+.industries {
+  padding: 50px 20px;
+  background: linear-gradient(45deg, #e3ffe7, #91b5f3);
+  text-align: center;
+}
+
+.industries h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Industries Grid Layout */
+.industries-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+/* Industry Item */
+.industry-item {
+  flex-basis: calc(33.333% - 40px);
+  min-width: 250px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* Industry Item Hover Animation */
+.industry-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.industry-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+.industry-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Title Styling */
+.industry-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
+}
+
+.industry-item:hover h3 {
+  color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .industries-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .industry-item {
+    flex-basis: 100%;
+  }
+}
+
+/* Optional: Background Animation */
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+
+
+
+
+/* Portfolio Section */
+.portfolio {
+  padding: 60px 20px;
+  background: linear-gradient(45deg, #f3ec78, #af4261);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  text-align: center;
+  color: #fff;
+}
+
+/* Title Styling */
+.portfolio h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+/* Portfolio Grid Layout */
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+/* Portfolio Item */
+.portfolio-item {
+  flex-basis: calc(33.333% - 30px);
+  min-width: 250px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover Effect */
+.portfolio-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Project Title Styling */
+.portfolio-item h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 20px 0;
+  color: #333;
+  background-color: #f9f9f9;
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+.portfolio-item:hover h3 {
+  color: #af4261;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .portfolio-item {
+    flex-basis: 100%;
+  }
+}
+
+/* Optional: Background Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+
+
+
+
+/* Blog Section */
+.blog {
+  padding: 60px 20px;
+  background: linear-gradient(45deg, #1e1e1e, #353535);
+  background-size: 400% 400%;
+  animation: blogBackground 10s ease infinite;
+  text-align: center;
+  color: #fff;
+}
+
+/* Section Title */
+.blog h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+/* Blog Grid Layout */
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Blog Item */
+.blog-item {
+  flex-basis: calc(33.333% - 30px);
+  min-width: 250px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover Effect */
+.blog-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.blog-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.blog-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Blog Title */
+.blog-item h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 15px 10px;
+  color: #333;
+  margin: 0;
+  background-color: #f9f9f9;
+  transition: color 0.4s ease;
+}
+
+.blog-item:hover h3 {
+  color: #1e1e1e;
+}
+
+/* Blog Excerpt */
+.blog-item p {
+  font-size: 1rem;
+  color: #555;
+  padding: 10px 20px;
+  background-color: #fff;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect for Excerpt */
+.blog-item:hover p {
+  color: #af4261;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .blog-item {
+    flex-basis: 100%;
+  }
+}
+
+/* Background Animation */
+@keyframes blogBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+
+
+
+/* Testimonials Section */
+.testimonials {
+  padding: 60px 20px;
+  background: linear-gradient(45deg, #232526, #414345); /* Modern gradient background */
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  text-align: center;
+  color: #fff;
+}
+
+/* Section Title */
+.testimonials h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+/* Testimonials Grid Layout */
+.testimonials-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+/* Testimonial Item */
+.testimonial-item {
+  flex-basis: calc(33.333% - 30px);
+  min-width: 250px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Hover Effect */
+.testimonial-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial Text */
+.testimonial-item p {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 15px 0;
+  transition: color 0.4s ease;
+  color: #666;
+}
+
+/* Testimonial Name */
+.testimonial-item h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+/* Image Styling */
+.testimonial-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.testimonial-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .testimonial-item {
+    flex-basis: 100%;
+  }
+}
+
+/* Background Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
